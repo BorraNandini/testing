@@ -1,34 +1,35 @@
 // using switch
-function calculator(num1, num2, operator){
-    switch(operator){
-        case '+':
-            return num1+num2;
-        case '-':
-            return num1-num2;
-        case '*':
-            return num1*num2;
-        case '%':
-            return num1%num2;
-        case '/':
-            if (num2 == 0){
-                return "Error: Number Divided by zero";
-            }else{
-                return num1/num2;
-            }
-        default:
-            return "Invalid Operator";
+// function calculator(num1, num2, operator){
+//     switch(operator){
+//         case '+':
+//             return num1+num2;
+//         case '-':
+//             return num1-num2;
+//         case '*':
+//             return num1*num2;
+//         case '%':
+//             return num1%num2;
+//         case '/':
+//             if (num2 == 0){
+//                 return "Error: Number Divided by zero";
+//             }else{
+//                 return num1/num2;
+//             }
+//         default:
+//             return "Invalid Operator";
 
 
-            }
-    }
-console.log(calculator(12,6,'/'))
-console.log(calculator(5,9,'*'))
-console.log(calculator(967,769,'+'))
-console.log(calculator(85,456,'-'))
-console.log(calculator(8,0,'/'))
-console.log(calculator(9,8,7,'+'))
-console.log(calculator(9,'*'))
-console.log(calculator(93,45,'%'))
+//             }
+//     }
+// console.log(calculator(12,6,'/'))
+// console.log(calculator(5,9,'*'))
+// console.log(calculator(967,769,'+'))
+// console.log(calculator(85,456,'-'))
+// console.log(calculator(8,0,'/'))
+// console.log(calculator(9,8,7,'+'))
+// console.log(calculator(9,'*'))
+// console.log(calculator(93,45,'%'))
+// console.log(calculator(6,12,'/'));
 
 
 function addition(a,b){
