@@ -50,7 +50,7 @@
  
   <script>
     let displayValue = '';
-    const operators = ['+', '-', '*', '/']
+    const operators = ['+', '-', '*', '/', '%']
  
     function appendValue(value) {
       displayValue += value;
@@ -86,20 +86,29 @@
       }
     }
 
-    function calculatePercentage(){
-      if (displayValue){
+    function calculatePercentage() {
+      if (displayValue) {
         const lastChar = displayValue[displayValue.length - 1];
-        if (!operators.includes(lastChar)){
-          displayValue = (eval(displayValue)/100).tostring();
-          document.getElementById('display').value = displayValue;
+        if (operators.includes(lastChar)) {
+            displayValue = displayValue.slice(0, -1) + '%';
+        } else {
+            try {
+                const result = eval(displayValue);
+                displayValue = (result / 100).toString();
+            } catch {
+                displayValue = '';
+                document.getElementById('display').value = 'Error';
+                return;
+            }
         }
+        document.getElementById('display').value = displayValue;
       }
     }
 
     function validateInput(event) {
       const allowedKeys = [
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-        '+', '-', '*', '/', '.', '%', 'Enter', 'Backspace'
+        '+', '-', '*', '/', '.', '%', 'Enter', 'Backspace', '='
       ];
  
       if (!allowedKeys.includes(event.key)) {
