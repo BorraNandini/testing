@@ -67,27 +67,18 @@
       }
       document.getElementById('display').value = displayValue;
     }
-    
+
     function clearDisplay() {
       displayValue = '';
       document.getElementById('display').value = displayValue;
     }
  
-    // function calculate() {
-    //   try {
-    //     document.getElementById('display').value = displayValue ? eval(displayValue) : '';
-    //   } catch (error) {
-    //     document.getElementById('display').value = 'Error';
-    //     displayValue = '';
-    //   }
-    // }
     function calculate() {
       try {
         const lastChar = displayValue[displayValue.length - 1];
         if (operators.includes(lastChar)) {
           displayValue = displayValue.slice(0, -1);
         }
-        // displayValue = eval(displayValue).toString();
         document.getElementById('display').value = displayValue ? eval(displayValue) : '';
       } catch (error) {
         document.getElementById('display').value = 'Error';
@@ -111,29 +102,20 @@
         '+', '-', '*', '/', '.', '%', 'Enter', 'Backspace'
       ];
  
-      // Allow only numbers, operators, and control keys
       if (!allowedKeys.includes(event.key)) {
         event.preventDefault();
       }
  
-      // Handle Enter key to trigger calculation
       if (event.key === 'Enter') {
         calculate();
       }
  
-      // Handle Backspace to remove the last character
       if (event.key === 'Backspace') {
         displayValue = displayValue.slice(0, -1);
         document.getElementById('display').value = displayValue;
       }
     }
-    // function calculatePercentage() {
-    //     if (displayValue){
-    //         const result = eval(displayValue)/100;
-    //     document.getElementById('display').value = result;
-    //     displayValue = 'result';
-    //   }
-    // }
+   
 
   </script>
 </body>
